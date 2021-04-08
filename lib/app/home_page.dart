@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:musala/services/location.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,9 +13,7 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           child: ElevatedButton(
             child: Text('Get Location'),
-            onPressed: () {
-              LocationData().getLocation();
-            },
+            onPressed: () {},
           ),
         ),
       ),
