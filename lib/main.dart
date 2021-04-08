@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:musala/app/home_page.dart';
 import 'package:musala/app/splash_page.dart';
 
 void main() {

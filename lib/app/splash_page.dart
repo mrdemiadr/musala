@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musala/app/home_page.dart';
 import 'package:musala/services/location.dart';
 
 class SplashPage extends StatefulWidget {
@@ -7,6 +8,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  LocationData location;
   @override
   void initState() {
     super.initState();
@@ -14,13 +16,21 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void getLocation() async {
-    LocationData location = LocationData();
+    location = LocationData();
     await location.getLocation();
+    await location.getPlacemark();
+    // print(location.position);
+    // print(location.position);
+    // if(location != null){
+
+    print(location.position.latitude);
     print(location.placemarks);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return location.position.latitude != null
+        ? HomePage(location: location.position.latitude)
+        : CircularProgressIndicator();
   }
 }

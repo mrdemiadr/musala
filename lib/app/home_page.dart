@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
+  final double location;
+  HomePage({@required this.location});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          child: ElevatedButton(
-            child: Text('Get Location'),
-            onPressed: () {},
-          ),
+          child: Text('$location'),
         ),
       ),
     );
